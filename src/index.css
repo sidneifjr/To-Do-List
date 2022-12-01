@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --font: 'Inter', sans-serif;
+  --purple: #8284FA;
+  --purple-dark: #5E60CE;
+  --blue: #4EA8DE;
+  --blue-dark: #1E6F9F;
+
+  --black: #000000;
+  --white: #ffffff;
+
+  --gray-700: #0D0D0D;
+  --gray-600: #1A1A1A;
+  --gray-500: #262626;
+  --gray-400: #333333;
+  --gray-300: #808080;
+  --gray-200: #D9D9D9;
+  --gray-100: #F2F2F2;
+  --danger: #E25858;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+mark,
+a,
+button,
+div,
+body,
+header,
+main,
+section,
+footer,
+aside,
+article,
+figure,
+figcaption,
+ul,
+ol,
+li,
+img,
+form,
+input,
+label,
+select,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+label,
+input,
+textarea,
+select,
+button[type="button"],
+button[type="submit"] {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  font-family: var(--font);
+}
+
+body {
+  background-color: var(--gray-600);
+}
