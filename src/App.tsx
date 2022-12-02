@@ -1,12 +1,13 @@
+import { useState } from "react";
+
 import { Header } from "./components/Header";
+import { Forms } from "./components/Form";
 import { InputField } from "./components/InputField";
 import { Button } from "./components/Button";
 import { Icon } from "./components/Icon";
 import { List } from "./components/List";
 
 import PlusIcon from "./assets/plus.svg";
-import { useState } from "react";
-import { Forms } from "./components/Form";
 
 const lists = [
   {
@@ -36,12 +37,25 @@ const lists = [
 ]
 
 const App = () => {
-  const [inputValue, setInputValue] = useState("");
   const [listsContent, setListsContent] = useState(lists);
+  const [inputValue, setInputValue] = useState('');
 
   const formHandler = (e:any) => {
     e.preventDefault();
-    console.log(inputValue);
+
+    setListsContent([
+      ...listsContent, {
+        id: Math.random(),
+        text: inputValue
+      }
+    ]);
+
+    // Limpa o campo, retornando para o valor original.
+    setInputValue('');
+  }
+
+  const handleInput = (el:any) => {
+    setInputValue(el.target.value);
   }
 
   return (
@@ -49,8 +63,8 @@ const App = () => {
       <Header />
 
       <Forms onSubmit={formHandler}>
-        <InputField type="text" placeholder="Adicione uma nova tarefa" />
-        <Button type="submit">Criar <Icon src={PlusIcon} alt="Plus Icon" style={{marginLeft: "8px"}}></Icon></Button>
+        <InputField onChange={handleInput} value={inputValue} type="text" name="formInput" placeholder="Adicione uma nova tarefa" />
+        <Button type="submit">Criar <Icon src={PlusIcon} alt="Plus Icon" style={{ marginLeft: "8px" }}></Icon></Button>
       </Forms>
 
       <List listItens={listsContent} />
