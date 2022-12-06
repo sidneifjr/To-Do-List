@@ -17,6 +17,19 @@ export const ListItem = styled.li<ListItemProps>`
   transition: text-decoration ease-in-out 0.2s, color ease-in-out 0.2s;
   display: flex;
   justify-content: space-between;
+  animation: fadeIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 
   input[type="checkbox"] {
     width: 24px;
