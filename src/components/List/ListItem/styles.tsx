@@ -13,9 +13,10 @@ export const ListItem = styled.li<ListItemProps>`
   border-radius: 8px;
   padding: 16px 16px 16px 52px;
   position: relative;
-  display: flex;
   gap: 12px;
   transition: text-decoration ease-in-out 0.2s, color ease-in-out 0.2s;
+  display: flex;
+  justify-content: space-between;
 
   input[type="checkbox"] {
     width: 24px;
