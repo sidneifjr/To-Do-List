@@ -39,6 +39,9 @@ const ListTopInfoTextCounter = styled.span`
   color: var(--gray-200);
   background: var(--gray-400);
   border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export {
