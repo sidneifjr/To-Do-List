@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { ListItems } from "./ListItem";
+
 import {
   ListWrapper,
   Lists,
@@ -6,11 +9,10 @@ import {
   ListTopInfoTextCounter,
 } from "./styles";
 
-import { ListItems } from "./ListItem";
-import { useState } from "react";
-
 interface ListProps {
   listItens: ListItemsProps[];
+  text?: string;
+  onDelete?: (itemToDelete: any) => void;
 }
 
 interface ListItemsProps {
@@ -18,38 +20,58 @@ interface ListItemsProps {
   text: string;
 }
 
-export const List = ({ ...props }: ListProps) => {
-  const [lists, setLists] = useState(['']);
+export const List = ({ onDelete, ...props }: ListProps) => {
+  const [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
 
-  // const handleDelete = (listToDelete: ListItemsProps) => {
-  //   const listsWithoutDeletedOne = props.listItens.filter(listItem => {
-  //     return listItem !== listToDelete;
-  //   });
-
-  //   setLists(listsWithoutDeletedOne);
+  // const handleCompletedTasks = () => {
+  //   console.log(props.listItens.length);
+  //   setAmountOfTasksCompleted(amountOfTasksCompleted+1);
   // }
+
+  const handleDeleteItem = () => {
+    console.log("deletar");
+
+    onDelete(ListItems);
+  };
+
+  const showListsOrError = () => {
+    if (props.listItens) {
+      return (
+        <Lists>
+          {props.listItens.map((item: any) => (
+            <ListItems
+              key={item.id}
+              text={item.text}
+              onDelete={handleDeleteItem}
+              // onCheck={handleCompletedTasks}
+            />
+          ))}
+        </Lists>
+      );
+    } else {
+      return <p>Nada será exibido.</p>;
+    }
+  };
 
   return (
     <ListWrapper>
       <ListTopInfo>
         <ListTopInfoText>
-          Tarefas criadas <ListTopInfoTextCounter>0</ListTopInfoTextCounter>
+          Tarefas criadas{" "}
+          <ListTopInfoTextCounter>
+            {props.listItens.length}
+          </ListTopInfoTextCounter>
         </ListTopInfoText>
 
         <ListTopInfoText>
-          Concluídas <ListTopInfoTextCounter>0</ListTopInfoTextCounter>
+          Concluídas{" "}
+          <ListTopInfoTextCounter>
+            {amountOfTasksCompleted}
+          </ListTopInfoTextCounter>
         </ListTopInfoText>
       </ListTopInfo>
 
-      <Lists>
-        {props.listItens.map((listItem: any) => (
-          <ListItems
-            key={listItem.id}
-            text={listItem.text}
-            // onDelete={() => deleteHandle}
-          />
-        ))}
-      </Lists>
+      {showListsOrError()}
     </ListWrapper>
   );
 };
