@@ -6,7 +6,8 @@ import trashIcon from "../../../assets/trash.svg";
 
 interface ListItemsProps extends LiHTMLAttributes<HTMLUListElement> {
   text?: string;
-  onDelete?: () => {};
+  onDelete?: () => void;
+  // onCheck?: () => void;
 }
 
 export const ListItems = ({ ...props }: ListItemsProps) => {
@@ -17,7 +18,7 @@ export const ListItems = ({ ...props }: ListItemsProps) => {
   };
 
   return (
-    <ListItem className={checkboxChecked ? "active" : ""}>
+    <ListItem className={checkboxChecked ? "active" : ""} key={props.id}>
       <input type="checkbox" onClick={checkHandler} />
       {props.text}
 
