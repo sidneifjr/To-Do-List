@@ -43,6 +43,8 @@ const App = () => {
   const formHandler = (e:any) => {
     e.preventDefault();
 
+    if(inputValue === "") return;
+
     setListsContent([
       ...listsContent, {
         id: Math.random(),
@@ -50,12 +52,21 @@ const App = () => {
       }
     ]);
 
-    // Limpa o campo, retornando para o valor original.
-    setInputValue('');
+    setInputValue(''); // Limpa o campo, retornando para o valor original.
   }
 
   const handleInput = (el:any) => {
     setInputValue(el.target.value);
+  }
+
+  const handleDelete = (event: any) => {
+    event.preventDefault();
+
+    const listsContentWithoutDeletedItem = listsContent.filter(listsContentItem => {
+      return listsContentItem !== event;
+    });
+
+    setListsContent(listsContentWithoutDeletedItem);
   }
 
   return (
@@ -67,7 +78,7 @@ const App = () => {
         <Button type="submit">Criar <Icon src={PlusIcon} alt="Plus Icon" style={{ marginLeft: "8px" }}></Icon></Button>
       </Forms>
 
-      <List listItens={listsContent} />
+      <List listItens={listsContent} onDelete={handleDelete} />
     </>
   )
 };
