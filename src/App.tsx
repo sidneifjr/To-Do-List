@@ -43,7 +43,7 @@ const App = () => {
   const formHandler = (e:any) => {
     e.preventDefault();
 
-    if(inputValue === "") return;
+    if(inputValue === "") return; // impede o cadastro de conteúdo vazio pelo usuário.
 
     setListsContent([
       ...listsContent, {
@@ -52,18 +52,18 @@ const App = () => {
       }
     ]);
 
-    setInputValue(''); // Limpa o campo, retornando para o valor original.
+    setInputValue(''); // Limpa o campo, retornando ao seu valor inicial.
   }
 
   const handleInput = (el:any) => {
     setInputValue(el.target.value);
   }
 
-  const handleDelete = (event: any) => {
+  const handleDelete = (itemToDelete: any) => {
     event.preventDefault();
 
     const listsContentWithoutDeletedItem = listsContent.filter(listsContentItem => {
-      return listsContentItem !== event;
+      return listsContentItem !== itemToDelete;
     });
 
     setListsContent(listsContentWithoutDeletedItem);
