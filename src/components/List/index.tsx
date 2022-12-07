@@ -12,7 +12,8 @@ import {
 interface ListProps {
   listItens: ListItemsProps[];
   text?: string;
-  onDelete?: (itemToDelete: any) => void;
+  onDelete?: any;
+  // onDelete?: (itemToDelete: any) => void;
 }
 
 interface ListItemsProps {
@@ -23,27 +24,28 @@ interface ListItemsProps {
 export const List = ({ onDelete, ...props }: ListProps) => {
   const [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
 
-  // const handleCompletedTasks = () => {
-  //   console.log(props.listItens.length);
-  //   setAmountOfTasksCompleted(amountOfTasksCompleted+1);
-  // }
+  const handleCompletedTasks = (target: { checked: boolean; }) => {
+    let isMyTargetChecked = target.checked;
 
-  const handleDeleteItem = () => {
-    console.log("deletar");
+    if(isMyTargetChecked === true){
+      setAmountOfTasksCompleted(amountOfTasksCompleted+1);
+    }
 
-    onDelete(ListItems);
-  };
+    else if (isMyTargetChecked === false){
+      setAmountOfTasksCompleted(amountOfTasksCompleted-1);
+    }
+  }
 
   const showListsOrError = () => {
     if (props.listItens) {
       return (
         <Lists>
-          {props.listItens.map((item: any) => (
+          {props.listItens.map((listItem: any) => (
             <ListItems
-              key={item.id}
-              text={item.text}
-              onDelete={handleDeleteItem}
-              // onCheck={handleCompletedTasks}
+              key={listItem.id}
+              text={listItem.text}
+              onDelete={() => onDelete(listItem)}
+              onClick={(e) => handleCompletedTasks(e)}
             />
           ))}
         </Lists>
