@@ -5,7 +5,12 @@ Nesse desafio, você vai desenvolver uma aplicação de controle de tarefas no e
 - [x] Adicionar uma nova tarefa
 - [x] Marcar e desmarcar uma tarefa como concluída
 - [x] Remover uma tarefa da listagem
-- [ ] Mostrar o progresso de conclusão das tarefas
+- [X] Mostrar o progresso de conclusão das tarefas
+
+## Aprendizado
+
+1) (**Considerar**) Quebrar um componente mais complexo em partes menores, *somente* após criá-lo ou ter certeza da estrutura desejada.
+2) Reduzir a quantidade de layers na aplicação; começando pela implementação de CSS modules, ao invés de Styled Components.
 
 ## Links úteis
 
