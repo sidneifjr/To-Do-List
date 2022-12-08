@@ -22,35 +22,39 @@ interface ListItemsProps {
 }
 
 export const List = ({ onDelete, ...props }: ListProps) => {
-  const [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
+  // Armazena a quantidade de tarefas, marcadas como "completa".
+  let [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
 
-  const handleCompletedTasks = (target: { checked: boolean; }) => {
-    let isMyTargetChecked = target.checked;
+  const handleCompletedTasks = (e: boolean) => {    
+    let isTargetChecked = e;
 
-    if(isMyTargetChecked === true){
-      setAmountOfTasksCompleted(amountOfTasksCompleted+1);
+    if(isTargetChecked === true){
+      setAmountOfTasksCompleted(amountOfTasksCompleted + 1);
     }
 
-    else if (isMyTargetChecked === false){
-      setAmountOfTasksCompleted(amountOfTasksCompleted-1);
+    else if (isTargetChecked === false){
+      setAmountOfTasksCompleted(amountOfTasksCompleted - 1);
     }
   }
 
+  // Imprime as listas, caso existam itens; senão, exibe mensagem informando.
   const showListsOrError = () => {
     if (props.listItens) {
       return (
         <Lists>
-          {props.listItens.map((listItem: any) => (
+          {props.listItens.map((listItem) => (
             <ListItems
               key={listItem.id}
               text={listItem.text}
               onDelete={() => onDelete(listItem)}
-              onClick={(e) => handleCompletedTasks(e)}
+              onChecked={(el) => handleCompletedTasks(el)}
             />
           ))}
         </Lists>
       );
-    } else {
+    }
+
+    else {
       return <p>Nada será exibido.</p>;
     }
   };
@@ -60,16 +64,12 @@ export const List = ({ onDelete, ...props }: ListProps) => {
       <ListTopInfo>
         <ListTopInfoText>
           Tarefas criadas{" "}
-          <ListTopInfoTextCounter>
-            {props.listItens.length}
-          </ListTopInfoTextCounter>
+          <ListTopInfoTextCounter>{props.listItens.length}</ListTopInfoTextCounter>
         </ListTopInfoText>
 
         <ListTopInfoText>
           Concluídas{" "}
-          <ListTopInfoTextCounter>
-            {amountOfTasksCompleted}
-          </ListTopInfoTextCounter>
+          <ListTopInfoTextCounter>{amountOfTasksCompleted}</ListTopInfoTextCounter>
         </ListTopInfoText>
       </ListTopInfo>
 

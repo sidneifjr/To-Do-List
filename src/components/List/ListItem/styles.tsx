@@ -19,7 +19,7 @@ export const ListItem = styled.li<ListItemProps>`
   justify-content: space-between;
   animation: fadeIn;
   animation-timing-function: ease-in-out;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
 
   @keyframes fadeIn {
     0% {
