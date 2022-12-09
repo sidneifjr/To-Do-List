@@ -13,7 +13,7 @@ interface IListItems extends LiHTMLAttributes<HTMLUListElement> {
 
 export const ListItems = ({ ...props }: IListItems) => {
   // Armazena o estado do checkbox: marcado ou não.
-  const [checkboxChecked, setCheckboxChecked] = useState(false);
+  const [checkboxChecked, setCheckboxChecked] = useState<boolean>(false);
 
   const checkHandler = (e: { target: any; }) => {
     let checkbox = e.target;

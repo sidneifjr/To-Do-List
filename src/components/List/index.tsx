@@ -23,7 +23,7 @@ interface IListItems {
 
 export const List = ({ onDelete, ...props }: IList) => {
   // Armazena a quantidade de tarefas, marcadas como "completa".
-  let [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
+  let [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState<number>(0);
 
   const handleCompletedTasks = (e: boolean) => {    
     let isTargetChecked = e;

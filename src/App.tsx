@@ -9,6 +9,11 @@ import { List } from "./components/List";
 
 import PlusIcon from "./assets/plus.svg";
 
+interface ILists {
+  id: number;
+  text: string;
+}
+
 // Conteúdo a ser exibido.
 const lists = [
   {
@@ -39,13 +44,13 @@ const lists = [
 
 const App = () => {
   // Armazena o conteúdo a ser exibido.
-  const [listsContent, setListsContent] = useState(lists);
+  const [listsContent, setListsContent] = useState<ILists[]>(lists);
 
   // Armazena o valor digitado no input.
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState<string>('');
 
   // Controla a exibição da mensagem de erro, relacionada ao valor do input.
-  const [inputError, setInputError] = useState(false);
+  const [inputError, setInputError] = useState<boolean>(false);
 
   // Obtém o valor digitado no input.
   const handleInput = (e: any) => {
