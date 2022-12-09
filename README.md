@@ -7,6 +7,14 @@ Nesse desafio, você vai desenvolver uma aplicação de controle de tarefas no e
 - [x] Remover uma tarefa da listagem
 - [X] Mostrar o progresso de conclusão das tarefas
 
+## Ajustes extras
+
+- [ ] Incluir tipagem nos estados.
+- [ ] Substituir instância de "any" pelo valor correto.
+- [ ] Inserir animações ao incluir e remover, com React Spring. 
+- [ ] Polir o comportamento de alguns componentes: contador de itens concluídos e outros.
+- [ ] Exibir mensagem de erro, ao inserir um valor inválido (ou vazio).
+
 ## Referência
 
 https://www.figma.com/file/kfMZGnaMKd2CzsGRQ86cEQ/ToDo-List-(Copy)?node-id=12%3A106&t=uIEpCaiP0WFZjEuf-0
