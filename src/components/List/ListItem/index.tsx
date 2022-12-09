@@ -4,14 +4,14 @@ import { DeleteButton, ListItem } from "./styles";
 
 import trashIcon from "../../../assets/trash.svg";
 
-interface ListItemsProps extends LiHTMLAttributes<HTMLUListElement> {
+interface IListItems extends LiHTMLAttributes<HTMLUListElement> {
   text?: string;
   onClick?: () => void;
   onChecked: (e: any) => void;
   onDelete: () => void;
 }
 
-export const ListItems = ({ ...props }: ListItemsProps) => {
+export const ListItems = ({ ...props }: IListItems) => {
   // Armazena o estado do checkbox: marcado ou não.
   const [checkboxChecked, setCheckboxChecked] = useState(false);
 

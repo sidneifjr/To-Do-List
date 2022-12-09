@@ -1,9 +1,9 @@
 import { ImgHTMLAttributes } from "react";
 
-interface IconProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface IIcon extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
 
-export const Icon = ({ ...props }: IconProps) => {
+export const Icon = ({ ...props }: IIcon) => {
   return <img {...props} />;
 };

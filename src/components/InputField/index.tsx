@@ -1,11 +1,11 @@
 import { InputHTMLAttributes } from "react";
 import { InputWrapper, Input, Error } from "./styles";
 
-interface InputField extends InputHTMLAttributes<HTMLInputElement>{
+interface IInputField extends InputHTMLAttributes<HTMLInputElement>{
   hasError: boolean;
 }
 
-export const InputField = ({...props}: InputField) => {
+export const InputField = ({...props}: IInputField) => {
   return  (
     <InputWrapper>
       {props.hasError ? <Error>Por favor, insira um valor válido.</Error> : ''}

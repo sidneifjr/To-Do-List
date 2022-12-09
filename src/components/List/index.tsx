@@ -10,18 +10,18 @@ import {
   ListTopInfoTextCounter,
 } from "./styles";
 
-interface ListProps {
-  listItens: ListItemsProps[];
+interface IList {
+  listItens: IListItems[];
   text?: string;
   onDelete?: any;
 }
 
-interface ListItemsProps {
+interface IListItems {
   id: number;
   text: string;
 }
 
-export const List = ({ onDelete, ...props }: ListProps) => {
+export const List = ({ onDelete, ...props }: IList) => {
   // Armazena a quantidade de tarefas, marcadas como "completa".
   let [amountOfTasksCompleted, setAmountOfTasksCompleted] = useState(0);
 
