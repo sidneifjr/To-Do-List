@@ -1,9 +1,17 @@
 import styled from "styled-components";
 import { convertToRem } from "../../helpers/convertToRem";
 
+const InputWrapper = styled.div`
+  width: 100%;
+  position: relative;
+  margin-right: ${convertToRem(8)};
+  display: flex;
+  flex-direction: column;
+`;
+
 const Input = styled.input`
   width: 100%;
-  max-width: 638px;
+  height: 100%;
   font-size: ${convertToRem(16)};
   line-height: ${convertToRem(22.4)};
   font-weight: var(--font-weight-regular);
@@ -12,7 +20,6 @@ const Input = styled.input`
   border: solid 1px var(--gray-700);
   border-radius: 8px;
   padding-left: ${convertToRem(16)};
-  margin-right: ${convertToRem(8)};
   display: block;
   outline: none;
 
@@ -22,4 +29,14 @@ const Input = styled.input`
   }
 `;
 
-export { Input };
+const Error = styled.span`
+  font-size: ${convertToRem(16)};
+  line-height: ${convertToRem(22.4)};
+  font-weight: var(--font-weight-regular);
+  color: var(--danger);
+  position: absolute;
+  top: ${convertToRem(-30)};
+  display: block;
+`
+
+export { InputWrapper, Input, Error };
