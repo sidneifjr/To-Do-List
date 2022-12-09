@@ -6,6 +6,7 @@ const ListWrapper = styled.div`
   max-width: 736px;
   margin-top: ${convertToRem(64)};
   margin-right: auto;
+  margin-bottom: ${convertToRem(64)};
   margin-left: auto;
 
   @media (max-width: 960px){
@@ -15,10 +16,35 @@ const ListWrapper = styled.div`
 `;
 
 const Lists = styled.ul`
+  max-height: 560px;
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: ${convertToRem(12)};
+  overflow: auto;
+
+  /* custom scrollbar */
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--gray-400);
+    border-radius: 50px;
+    border-top: solid 4px transparent;
+    border-right: solid 7px transparent;
+    border-bottom: solid 4px transparent;
+    border-left: solid 7px transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--gray-300);
+  }
 `;
 
 const ListTopInfo = styled.div`
@@ -45,6 +71,7 @@ const ListTopInfoTextCounter = styled.span`
   background: var(--gray-400);
   border-radius: 999px;
   padding: 0 ${convertToRem(8)};
+  margin-left: ${convertToRem(8)};
   display: inline-flex;
   justify-content: center;
   align-items: center;

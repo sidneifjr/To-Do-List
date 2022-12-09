@@ -46,7 +46,7 @@ const ListItem = styled.li<ListItemProps>`
 
 const DeleteButton = styled.button`
   height: 24px;
-  width: 24px;
+  min-width: 24px; // impede que o botão diminua, em relação ao texto.
   background: transparent;
   display: flex;
   align-items: flex-start;

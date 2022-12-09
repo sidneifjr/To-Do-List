@@ -67,13 +67,13 @@ export const List = ({ onDelete, ...props }: ListProps) => {
     <ListWrapper>
       <ListTopInfo>
         <ListTopInfoText>
-          Tarefas criadas{" "}
+          Tarefas criadas
           <ListTopInfoTextCounter>{props.listItens?.length || 0}</ListTopInfoTextCounter>
         </ListTopInfoText>
 
         <ListTopInfoText style={{color: "#8284FA"}}>
-          Concluídas{" "}
-          <ListTopInfoTextCounter>{amountOfTasksCompleted} de {props.listItens?.length || 0}</ListTopInfoTextCounter>
+          Concluídas
+          <ListTopInfoTextCounter style={{minWidth: "52px"}}>{amountOfTasksCompleted} de {props.listItens?.length || 0}</ListTopInfoTextCounter>
         </ListTopInfoText>
       </ListTopInfo>
 
