@@ -73,7 +73,7 @@ export const List = ({ onDelete, ...props }: ListProps) => {
 
         <ListTopInfoText style={{color: "#8284FA"}}>
           Concluídas{" "}
-          <ListTopInfoTextCounter>{amountOfTasksCompleted}</ListTopInfoTextCounter>
+          <ListTopInfoTextCounter>{amountOfTasksCompleted} de {props.listItens?.length || 0}</ListTopInfoTextCounter>
         </ListTopInfoText>
       </ListTopInfo>
 
