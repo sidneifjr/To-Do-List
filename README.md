@@ -13,7 +13,7 @@ Nesse desafio, você vai desenvolver uma aplicação de controle de tarefas no e
 - [ ] Substituir instância de "any" pelo valor correto.
 - [ ] Inserir animações ao incluir e remover, com React Spring. 
 - [ ] Polir o comportamento de alguns componentes: contador de itens concluídos e outros.
-- [ ] Exibir mensagem de erro, ao inserir um valor inválido (ou vazio).
+- [X] Exibir mensagem de erro, ao inserir um valor inválido (ou vazio).
 
 ## Referência
 
