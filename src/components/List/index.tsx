@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ErrorMessage } from "../ErrorMessage";
 import { ListItems } from "./ListItem";
 
 import {
@@ -13,7 +14,6 @@ interface ListProps {
   listItens: ListItemsProps[];
   text?: string;
   onDelete?: any;
-  // onDelete?: (itemToDelete: any) => void;
 }
 
 interface ListItemsProps {
@@ -55,7 +55,7 @@ export const List = ({ onDelete, ...props }: ListProps) => {
     }
 
     else {
-      return <p>Nada será exibido.</p>;
+      return <ErrorMessage />;
     }
   };
 
@@ -64,10 +64,10 @@ export const List = ({ onDelete, ...props }: ListProps) => {
       <ListTopInfo>
         <ListTopInfoText>
           Tarefas criadas{" "}
-          <ListTopInfoTextCounter>{props.listItens.length}</ListTopInfoTextCounter>
+          <ListTopInfoTextCounter>{props.listItens?.length || 0}</ListTopInfoTextCounter>
         </ListTopInfoText>
 
-        <ListTopInfoText>
+        <ListTopInfoText style={{color: "#8284FA"}}>
           Concluídas{" "}
           <ListTopInfoTextCounter>{amountOfTasksCompleted}</ListTopInfoTextCounter>
         </ListTopInfoText>
