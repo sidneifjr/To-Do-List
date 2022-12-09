@@ -7,6 +7,10 @@ Nesse desafio, você vai desenvolver uma aplicação de controle de tarefas no e
 - [x] Remover uma tarefa da listagem
 - [X] Mostrar o progresso de conclusão das tarefas
 
+## Referência
+
+https://www.figma.com/file/kfMZGnaMKd2CzsGRQ86cEQ/ToDo-List-(Copy)?node-id=12%3A106&t=uIEpCaiP0WFZjEuf-0
+
 ## Aprendizado
 
 1) (**Considerar**) Quebrar um componente mais complexo em partes menores, *somente* após criá-lo ou ter certeza da estrutura desejada.
