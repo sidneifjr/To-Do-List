@@ -39,7 +39,11 @@ export const List = ({ onDelete, ...props }: ListProps) => {
 
   // Imprime as listas, caso existam itens; senão, exibe mensagem informando.
   const showListsOrError = () => {
-    if (props.listItens) {
+    /**
+     * Verifica se o prop 'listItens' existe.
+     * Então, o método 'length' verifica a quantidade de itens no array; caso não existam mais, a mensagem de erro será exibida.
+     *  */ 
+    if (props.listItens.length) {
       return (
         <Lists>
           {props.listItens.map((listItem) => (
