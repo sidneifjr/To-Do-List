@@ -5,7 +5,7 @@ interface ListItemProps {
   text?: string;
 }
 
-export const ListItem = styled.li<ListItemProps>`
+const ListItem = styled.li<ListItemProps>`
   font-size: ${convertToRem(14)};
   line-height: ${convertToRem(20)};
   background: var(--gray-500);
@@ -43,3 +43,17 @@ export const ListItem = styled.li<ListItemProps>`
     color: var(--gray-300);
   }
 `;
+
+const DeleteButton = styled.button`
+  height: 24px;
+  width: 24px;
+  background: transparent;
+  display: flex;
+  align-items: flex-start;
+
+  &:hover {
+    background: var(--gray-400);
+  }
+`;
+
+export { ListItem, DeleteButton };

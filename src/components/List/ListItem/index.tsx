@@ -1,6 +1,6 @@
-import React, { LiHTMLAttributes, useState } from "react";
+import { LiHTMLAttributes, useState } from "react";
 import { Icon } from "../../Icon";
-import { ListItem } from "./styles";
+import { DeleteButton, ListItem } from "./styles";
 
 import trashIcon from "../../../assets/trash.svg";
 
@@ -29,9 +29,9 @@ export const ListItems = ({ ...props }: ListItemsProps) => {
       <input type="checkbox" onClick={checkHandler} />
       {props.text}
 
-      <a href="#" onClick={props.onDelete}>
+      <DeleteButton onClick={props.onDelete}>
         <Icon src={trashIcon} alt="Trash Icon"></Icon>
-      </a>
+      </DeleteButton>
     </ListItem>
   );
 };
