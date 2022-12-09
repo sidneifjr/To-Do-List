@@ -11,9 +11,9 @@ export const ListItem = styled.li<ListItemProps>`
   background: var(--gray-500);
   color: var(--gray-100);
   border-radius: 8px;
-  padding: 16px 16px 16px 52px;
+  padding: ${convertToRem(16)} ${convertToRem(16)} ${convertToRem(16)} ${convertToRem(52)};
   position: relative;
-  gap: 12px;
+  gap: ${convertToRem(12)};
   transition: text-decoration ease-in-out 0.2s, color ease-in-out 0.2s;
   display: flex;
   justify-content: space-between;
@@ -35,7 +35,7 @@ export const ListItem = styled.li<ListItemProps>`
     width: 24px;
     height: 24px;
     position: absolute;
-    left: 20px;
+    left: ${convertToRem(20)};
   }
 
   &.active {

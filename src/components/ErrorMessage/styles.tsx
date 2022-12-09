@@ -18,7 +18,7 @@ const ErrorTitle = styled.strong`
   width: 100%;
   font-size: ${convertToRem(16)};
   line-height: ${convertToRem(22.4)};
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   color: var(--gray-300);
   text-align: center;
   margin-top: ${convertToRem(16)};
@@ -31,7 +31,7 @@ const ErrorDescription = styled.p`
   width: 100%;
   font-size: ${convertToRem(16)};
   line-height: ${convertToRem(22.4)};
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   text-align: center;
   color: var(--gray-300);
 `;

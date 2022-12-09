@@ -6,13 +6,13 @@ const Input = styled.input`
   max-width: 638px;
   font-size: ${convertToRem(16)};
   line-height: ${convertToRem(22.4)};
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   color: var(--gray-300);
   background: var(--gray-500);
   border: solid 1px var(--gray-700);
   border-radius: 8px;
   padding-left: ${convertToRem(16)};
-  margin-right: 8px;
+  margin-right: ${convertToRem(8)};
   display: block;
   outline: none;
 

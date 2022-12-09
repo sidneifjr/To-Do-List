@@ -13,7 +13,7 @@ const SubmitButton = styled.button`
   font-family: var(--font);
   font-size: ${convertToRem(14)};
   line-height: ${convertToRem(19.6)};
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
   color: var(--white);
   background-color: var(--blue-dark);
   border-radius: 8px;
