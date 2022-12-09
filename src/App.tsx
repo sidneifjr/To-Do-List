@@ -44,6 +44,9 @@ const App = () => {
   // Armazena o valor digitado no input.
   const [inputValue, setInputValue] = useState('');
 
+  // Controla a exibição da mensagem de erro, relacionada ao valor do input.
+  const [inputError, setInputError] = useState(false);
+
   // Obtém o valor digitado no input.
   const handleInput = (e: any) => {
     setInputValue(e.target.value);
@@ -53,8 +56,15 @@ const App = () => {
   const formHandler = (el: any) => {
     el.preventDefault();
 
-    // Impede o cadastro de conteúdo vazio pelo usuário.
-    if(inputValue === "") return;
+    // Impede o cadastro de conteúdo vazio pelo usuário; trim() remove a possibilidade de duplos ou mais espaços.
+    if(inputValue.trim().length === 0) {
+      setInputError(true);
+      return;
+    };
+
+    // Se o usuário inseriu um valor inválido, a mensagem de erro é exibida. Porém, se ele inserir um valor válido após, a mensagem de erro continuará a ser exibida.
+    // Então, é necessário retornar o 'inputError' para false.
+    setInputError(false);
 
     // O spread operator (...) pega todos os valores pré-existentes em "listsContent". Ou seja, a variável "lists"!
     // Então, adiciona um novo item, com o id gerado randomicamente e usando o conteúdo estipulado em "inputValue".
@@ -86,7 +96,7 @@ const App = () => {
       <Header />
 
       <Forms onSubmit={formHandler}>
-        <InputField onChange={handleInput} value={inputValue} type="text" name="formInput" placeholder="Adicione uma nova tarefa" />
+        <InputField onChange={handleInput} hasError={inputError} value={inputValue} type="text" name="formInput" placeholder="Adicione uma nova tarefa" />
         <Button type="submit">Criar <Icon src={PlusIcon} alt="Plus Icon" style={{ marginLeft: "8px" }}></Icon></Button>
       </Forms>
 
