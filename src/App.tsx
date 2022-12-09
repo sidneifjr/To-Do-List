@@ -56,9 +56,8 @@ const App = () => {
     // Impede o cadastro de conteúdo vazio pelo usuário.
     if(inputValue === "") return;
 
-    // O spread operator (...) pega todos os valores pré-existentes em "listsContent".
-    // Ou seja, a variável "lists"!
-    // Então, adiciona um novo item, com o id gerado randomicamente e usando o conteúdo em "inputValue".
+    // O spread operator (...) pega todos os valores pré-existentes em "listsContent". Ou seja, a variável "lists"!
+    // Então, adiciona um novo item, com o id gerado randomicamente e usando o conteúdo estipulado em "inputValue".
     setListsContent([
       ...listsContent, {
         id: Math.random(),
@@ -74,7 +73,7 @@ const App = () => {
   const handleDelete = (itemToDelete: any) => {
     event!.preventDefault(); // A exclamação (!) é uma forma de avisar que o 'event' nunca será undefined; ou seja, sempre retornará algo.
 
-    // Filtra os itens, de acordo com a condição: "se o item atual for diferente do item que passei, incluir em una nova lista e retorná-la".
+    // Filtra os itens, de acordo com a condição: "se o item atual for diferente do item que passei, incluir em una nova lista; ao encerrar a iteração, retornar tal lista".
     const listsContentWithoutDeletedItem = listsContent.filter(listsContentItem => {
       return listsContentItem !== itemToDelete;
     });
