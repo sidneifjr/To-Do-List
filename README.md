@@ -9,11 +9,12 @@ Nesse desafio, você vai desenvolver uma aplicação de controle de tarefas no e
 
 ## Ajustes extras
 
-- [ ] Incluir tipagem nos estados.
-- [ ] Substituir instância de "any" pelo valor correto.
+- [X] Incluir tipagem nos estados.
+- [X] Exibir mensagem de erro, ao inserir um valor inválido (ou vazio).
+- [X] Padronizar interfaces.
+- [ ] Substituir instâncias de "any" pelo valor correto.
 - [ ] Inserir animações ao incluir e remover, com React Spring. 
 - [ ] Polir o comportamento de alguns componentes: contador de itens concluídos e outros.
-- [X] Exibir mensagem de erro, ao inserir um valor inválido (ou vazio).
 
 ## Referência
 
