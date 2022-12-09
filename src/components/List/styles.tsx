@@ -37,13 +37,14 @@ const ListTopInfoText = styled.p`
 
 const ListTopInfoTextCounter = styled.span`
   height: 19px;
-  width: 25px;
+  min-width: 25px;
   font-size: ${convertToRem(12)};
   line-height: ${convertToRem(15)};
   font-weight: var(--font-weight-bold);
   color: var(--gray-200);
   background: var(--gray-400);
-  border-radius: 50%;
+  border-radius: 999px;
+  padding: 0 ${convertToRem(8)};
   display: inline-flex;
   justify-content: center;
   align-items: center;
