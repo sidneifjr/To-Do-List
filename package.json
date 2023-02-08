@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "cy": "npx cypress open"
+    "cy": "npx cypress open --e2e --browser chrome",
+    "cy:cli": "npx cypress run",
+    "cy:granbio": "npx cypress run -s ./cypress/e2e/granbio.cy.js"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
