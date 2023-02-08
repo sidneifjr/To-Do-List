@@ -1,6 +1,6 @@
 describe('Ciclo de vida do item', () => {
   beforeEach(() => {
-    cy.visit('localhost:3000')
+    cy.visit('https://to-do-list-neon-one.vercel.app/')
     cy.viewport(1920, 1080)
   })
 
@@ -17,7 +17,7 @@ describe('Ciclo de vida do item', () => {
     cy.get('[data-cy="form"]').find('input').click().type(" ") // Adiciona um item.
     cy.get('[data-cy="submit"]').click()
     cy.get('form').click().type("testando validade") // Tenta resolver o erro, cadastrando um novo valor.
-    cy.get('button[type="submit"]').click()
+    cy.get('[data-cy="submit"]').click()
     cy.get('[data-cy="lists"] > :nth-child(7) > input').click()
     cy.get('.active > [data-cy="deleteButton"] > img').wait(1000).click()
   })
