@@ -11,7 +11,7 @@ const ListItem = styled.li<ListItemProps>`
   background: var(--gray-500);
   color: var(--gray-100);
   border-radius: 8px;
-  padding: ${convertToRem(16)} ${convertToRem(16)} ${convertToRem(16)} ${convertToRem(52)};
+  padding: ${convertToRem(16)};
   position: relative;
   gap: ${convertToRem(12)};
   transition: text-decoration ease-in-out 0.2s, color ease-in-out 0.2s;

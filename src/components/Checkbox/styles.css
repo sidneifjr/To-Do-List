@@ -1,0 +1,40 @@
+@import '@radix-ui/colors/blackA.css';
+@import '@radix-ui/colors/violet.css';
+
+.CheckboxRoot {
+  background-color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 25px;
+  background: transparent;
+  border: solid 2px var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px var(--blackA7);
+}
+
+.CheckboxRoot:hover {
+  /* background-color: var(--violet3); */
+}
+
+.CheckboxRoot:focus {
+  /* box-shadow: 0 0 0 2px black; */
+}
+
+.CheckboxRoot[aria-checked="true"]{
+  background: var(--purple-dark);
+  border: solid 2px var(--purple-dark);
+}
+
+.CheckboxIndicator {
+  color: var(--white);
+}
+
+.Label {
+  color: white;
+  padding-left: 15px;
+  font-size: 15px;
+  line-height: 1;
+  user-select: none;
+}

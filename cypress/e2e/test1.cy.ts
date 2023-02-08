@@ -1,36 +1,24 @@
 describe('Ciclo de vida do item', () => {
   beforeEach(() => {
-    cy.visit('https://to-do-list-neon-one.vercel.app/')
+    cy.visit('localhost:3000')
     cy.viewport(1920, 1080)
   })
 
   // Happy path.
   it('Adiciona um novo item', () => {
-    // Adiciona um item.
-    cy.get('form').click().type("Ir ao mercado e comprar verduras")
-    
-    cy.get('button[type="submit"]').click()
-
-    // Marca o item recém-adicionado.
-    cy.get('.Lists-sc-gqgo16-1 > :nth-child(7) > input').click()
-
-    // Exclui o item.
-    cy.get('.active > .DeleteButton-sc-1813rzx-1 > img').wait(1200).click()
+    cy.get('[data-cy="form"]').find('input').click().type("Ir ao mercado e comprar verduras").wait(1000) // Adiciona um item.
+    cy.get('[data-cy="submit"]').click()
+    cy.get('[data-cy="lists"] > :nth-child(7) > input').click() // Marca o item recém-adicionado.
+    cy.get('.active > [data-cy="deleteButton"] > img').wait(1000).click() // Exclui o item.
   })
 
   // Fail case, então corrigido para um happy path.
   it('Adiciona um item inválido', () => {
-    cy.get('form').click().type(" ")
-
+    cy.get('[data-cy="form"]').find('input').click().type(" ") // Adiciona um item.
+    cy.get('[data-cy="submit"]').click()
+    cy.get('form').click().type("testando validade") // Tenta resolver o erro, cadastrando um novo valor.
     cy.get('button[type="submit"]').click()
-
-    // Tenta resolver o erro, cadastrando um novo valor.
-    cy.get('form').click().type("testando validade")
-
-    cy.get('button[type="submit"]').click()
-
-    cy.get('.Lists-sc-gqgo16-1 > :nth-child(7) > input').click()
-
-    cy.get('.active > .DeleteButton-sc-1813rzx-1 > img').wait(1200).click()
+    cy.get('[data-cy="lists"] > :nth-child(7) > input').click()
+    cy.get('.active > [data-cy="deleteButton"] > img').wait(1000).click()
   })
 })

@@ -8,5 +8,5 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = ({ ...props }: IButton) => {
-  return <SubmitButton {...props}></SubmitButton>;
+  return <SubmitButton {...props} data-cy="submit"></SubmitButton>;
 };
